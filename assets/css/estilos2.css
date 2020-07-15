@@ -1,0 +1,536 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Creamos unas variables */
+:root {
+    --main-font: sans-serif;
+    --font-size: 16px;
+    --main-color: rgb(0, 38, 153);
+    --second-color: black;
+    --main-modal-color: rgba(247,222,30,0.85);
+    --second-modal-color: rgba(34,34,34,0.85);
+    --container-width: 1200px;
+}
+
+html{
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth; /* Transición para el cmabio de secciones */
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+}
+
+.titulo-principal{
+	color: black;
+}
+
+.titulo-principal:hover{
+	color: black;
+}
+.titulo-nav{
+	text-decoration: none;
+	color: white;
+}
+
+.titulo-nav:hover{
+	text-decoration: none;
+	color: white;
+}
+
+.titulo-proyecto{
+	text-decoration: none;
+	color: black;
+}
+
+.proyecto{
+	margin-bottom: 30px;
+}
+
+.proyecto2{
+	margin: 220px;
+	padding: 200px;
+}
+.descripcion-proyecto{
+	margin-top: 10px;
+}
+.div-titulos{
+	margin-bottom: 20px;
+}
+
+.titulo-proyecto:hover{
+	text-decoration: none;
+	color: royalblue;
+}
+
+.titulo-proyectos{
+	text-decoration: none;
+	color: black;
+}
+
+.titulo-proyectos:hover{
+	text-decoration: none;
+	color: royalblue;
+}
+
+
+
+
+.contenedor {
+	background:rgb(0, 0, 0);
+	width:100%;
+	max-width:1100px;
+	margin:auto;
+	display:flex;
+	flex-flow:row wrap;
+}
+
+body {
+	width: 100%;
+	background:white;
+}
+
+header {
+	background: url(../img/header.png) ;
+	width:100%;
+	padding:20px;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+
+header .logo {
+	color:#fff;
+	font-size:30px;
+}
+
+header .logo img {
+	width:110px;
+	vertical-align: top;
+
+}
+
+header .logo a {
+	color:#fff;
+	text-decoration: none;
+    line-height:110px;
+    font-family: sans-serif;
+}
+
+header nav {
+	width:50%;
+	/* Flexbox */
+
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+}
+
+header nav a {
+
+	color:#fff;
+	text-align: center;
+	text-decoration: none;
+    padding:10px;
+    font-family: sans-serif;
+
+	/* Flexbox */
+	flex-grow:1;
+}
+
+header nav a:hover {
+	background:rgba(57, 78, 196, 0.938);
+	border-radius: 8px;
+}
+
+.main {
+	background: rgb(168, 198, 221);
+	padding:20px;
+	border: 2px solid black;
+	flex:1 1 70%;
+	/*flex:1;*/
+}
+
+.main article {
+	margin-bottom: 20px;
+	padding-bottom:20px;
+	border-bottom:1px solid #000;
+}
+
+.main article:nth-last-child(1){
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom:none;
+}
+
+aside {
+	background:white;
+	padding:20px;
+	border-right: 2px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	/*FLEX*/
+	flex:1 1 30%;
+	/*flex:0 0 300px;*/
+
+	display: flex;
+	flex-wrap:wrap;
+	flex-direction:column;
+	justify-content:flex-start;
+}
+
+aside .widget {
+	position: sticky;
+	top: -30px;
+	height:150px;
+}
+
+
+
+.formulario{
+	border-radius: 10px;
+	max-width: 100%;
+}
+.caja-formulario:hover{
+
+	color:white;
+}
+
+.caja-formulario{
+	background-color: royalblue;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+footer {
+	background: black;
+	width: 100%;
+	padding:20px;
+	/* Flexbox */
+	display: flex;
+	flex-flow: column-reverse wrap;
+	align-content: center;
+	justify-content:space-between;
+}
+
+footer .links {
+/* 	background:#c0392b;
+ */	display:flex;
+	flex-wrap:wrap;
+}
+
+footer .links a {
+	flex-grow:1;
+    font-family: sans-serif;
+	color:#fff;
+	padding:10px;
+	text-align: center;
+	text-decoration:none;
+}
+
+footer .links a:hover {
+    color: white;
+}
+
+footer .social {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+/* 	background:#e67e22;
+ */}
+
+footer .social a {
+	color: white;
+	text-decoration: none;
+	padding:10px;
+    display: inline-block;
+
+
+    border-radius: 50%;
+
+    transition: 0.5s;
+}
+
+.social a:hover{
+    color: rgb(11, 45, 148);
+}
+
+.social a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+/* .social a:hover:before{
+    transform: scale(1);
+} */
+
+@media screen and (max-width: 910px) {
+	.contenedor {
+		flex-direction:column;
+	}
+
+	header {
+		flex-direction:column;
+		padding:0;
+	}
+
+	header .logo {
+		margin:20px 0;
+	}
+
+	header nav {
+		width: 100%;
+	}
+
+
+
+	aside {
+		flex-direction:row;
+		flex:0;
+		width: 100%;
+		height: 100%;
+		border-top: none;
+
+		border-left: 2px solid black;
+	}
+
+
+	aside .widget{
+		flex-grow:1;
+		width: 100%;
+		height: 100%;
+	}
+	/* #widget {
+		flex-grow:1;
+		width: 100%;
+		height: 100%;
+	} */
+
+}
+
+
+aside img{
+	border-radius: 100%;
+}
+
+.box{
+	position: relative;
+	/* top: calc(50% - 50px);
+	left: calc(50% - 95px); */
+	transform: perspective(900px) rotateX(-45deg);
+	width: 110px;
+	height: 110px;
+	border-radius: 100%;
+	transform-style: preserve-3d;
+}
+
+/* .box:before{
+	content: '';
+	position: absolute;
+	bottom: -100px;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background: #000;
+	filter: blur(40px);
+	opacity: 0.5;
+	transform: rotateX(90deg);
+} */
+
+.box div{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	animation: animate 10s linear infinite;
+}
+
+.box div span{
+	position: relative;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, #f1f1f1, #bbb, #f1f1f1);
+	border-radius: 20px;
+}
+
+
+
+@keyframes animate{
+	0%{
+		transform: perspective(900px) rotateX(0deg);
+
+	}
+	100%{
+		transform: perspective(900px) rotateX(360deg);
+	}
+}
+
+
+
+/* ********* ScrollTopBottom ********* */
+
+.scroll-top-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    /* La función calc permite realizar op. arit. en css. 
+    4 rem es la anchura del boton y si le sumamos 1vw se situaría justo
+    a la izquierda del hamburguer boton */
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+}
+
+.scroll-top-btn:hover{
+    background-color: var(--second-color);
+    color:var(--main-color);
+}
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* ********* DarkThemeButton ********* */
+
+.dark-theme-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    left: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+}
+
+.dark-theme-btn:hover{
+    background-color: var(--second-color);
+    color:var(--main-color);
+}
+
+.dark-mode{
+    background-color: var(--second-color);
+    color: rgb(168, 198, 221);
+}
+
+
+/* ********** Contact Form Validations */
+
+.contact-form{
+	--form-ok-color: #4caf50;
+	--form-error-color: #f44336;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.contact-form > *{
+	padding: 0.5rem;
+	margin: 1rem auto;
+	display: block;
+	width: 100%;
+}
+
+.contact-form textarea{
+	resize: none;
+}
+
+.contact-form legend, 
+.contact-form-response {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea{
+	font-size: 1rem;
+	font-family: sans-serif;
+}
+
+.contact-form input [type="submit"]{
+	width: 50%;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.contact-form *::placeholder{
+	color: rgb(150, 146, 146);
+}
+
+.contact-form [required]:valid{
+	border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid{
+	border: thin solid var(--form-error-color);
+}
+
+.contact-form-error{
+	margin-top: -1rem;
+	font-size: 80%;
+	background-color: var(--form-error-color);
+	color: white;
+	transition: all 800ms ease;
+}
+
+.contact-form-error is-active{
+	display: block;
+	animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none{
+	display: none;
+}
+
+@keyframes show-message{
+	0%{
+		visibility: hidden;
+		opacity: 0;
+	}
+	100%{
+		visibility: visible;
+		opacity: 1;
+	}
+}

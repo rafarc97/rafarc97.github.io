@@ -1,0 +1,19 @@
+{
+    "name": "#RAFA RC Blog", 
+    "short_name": "#RAFA RC Blog",
+    "description": "Welcome to my website, here I will publish all the projects as I carry out, in order to practice all technologies learned which are related to web design and development: HTML, CSS, Bootstrap, JavaScript, ...",
+    "background_color": "#2B2B2B",
+    "theme_color": "#F0DB4F",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest",
+    "scope": "./",
+    "lang": "es-ES",
+    "icons": [
+      {
+        "src": "./img/logo2.png",
+        "sizes": "1280x1280",
+        "type": "image/png"
+      }
+    ]
+  }

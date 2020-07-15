@@ -1,0 +1,85 @@
+h1{
+    background-color:#ff4747;
+    padding-left: 15px;
+    color: white;
+}
+
+.titulo-principal{
+}
+.titulo-principal img{
+    width: 40px;
+    border-radius: 20px;
+}
+
+.noticias-title{
+    text-align: center;
+    background-color: #ff4747;
+    color: white;
+}
+
+.noticia-clase1{
+    background-color: rgba(0, 0, 0, 0.575);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.noticia-clase2{
+    background-color: rgba(0, 0, 0, 0.575);
+    border-radius: 10px;
+    justify-items: center;
+    align-content: space-around;
+    align-items: center;
+}
+
+
+.link-card{
+    text-decoration: none;
+    color: black;
+}
+
+.titulo-secciones{
+    margin-top: 8px;;
+    text-align: center;
+    background-color: #ff4747;
+    color: white;
+}
+
+
+
+figure{
+    float: left;
+    padding-left: 45px;
+    text-align: center;
+       /*consigo que lo que aparezca a continuacion de la imagen se situe
+    rodeandolo, así de esa manera las imagenes se pondrán una seguida de la otra en línea*/
+  }
+  
+  figure img{ /*se aplica a etiquetas img que estén dentro de etiquetas figure*/
+    padding: 4px;
+    margin: 10px 10px;
+    box-shadow: #757575 5px 5px 5px;
+    border-radius: 20px;
+    -webkit-transition:-webkit-transform 1s ease 0.5s;
+    box-shadow:
+  }
+
+  .imagenes{
+    -webkit-transition:-webkit-transform 0.4s ease 0.01s;
+  }
+
+  .imagenes:hover{
+    -webkit-transform:scale(1.1); /*aumentamos el tam de la imagen cuando pasamo
+    el raton por encima*/
+  }
+
+  .secciones{
+      margin: 10px;;
+  }
+
+  .secciones2{
+    clear: both;
+    margin: 10px;
+    text-align: center;
+    justify-items: center;
+}
+
