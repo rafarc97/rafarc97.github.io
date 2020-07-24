@@ -22,8 +22,8 @@ d.addEventListener("DOMContentLoaded", (e) => {
     scrollTopButton(".scroll-top-btn");
     darkTheme(".dark-theme-btn","dark-mode");
     responsiveMedia("youtube","(min-width: 1024px)",
-    `<a href="https://www.youtube.com/watch?v=wVgPnTCznuc">Ver vídeo</a>`, 
-    `<iframe width="560" height="315" src="https://www.youtube.com/embed/wVgPnTCznuc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+    `<a href="https://www.youtube.com/watch?v=YG7OAIshR6Y">Ver vídeo</a>`, 
+    `<iframe width="560" height="315" src="https://www.youtube.com/embed/YG7OAIshR6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
 
     responsiveMedia("youtube2","(min-width: 1024px)",
     `<a href="https://www.youtube.com/watch?v=OK0IYES6pcs">Ver vídeo</a>`, 
