@@ -101,12 +101,17 @@ header {
 	background: url(../img/header.png) ;
 	width:100%;
 	padding:20px;
+
 	display: flex;
 	justify-content:space-between;
 	align-items:center;
 
 	flex-direction:row;
 	flex-wrap:wrap;
+}
+
+header img{
+	max-height: 150px;
 }
 
 header .logo {
@@ -533,4 +538,15 @@ aside img{
 		visibility: visible;
 		opacity: 1;
 	}
+}
+
+.titulo-carreras{
+	background: rgba(0, 0, 0, 0.692);
+	border: 2px solid white;
+	border-radius: 5px;
+	transition: transform 0.8s ease;
+}
+
+.titulo-carreras:hover{
+	transform: scale(1.1);
 }
