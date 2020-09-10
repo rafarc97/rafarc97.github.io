@@ -1,0 +1,207 @@
+--------------------------------
+|DOCUMENTACIÓN INSTAAPP LARAVEL|
+--------------------------------
+
+
+---------------------------------------------
+|Autor: Rafael Rodríguez Calvente           |
+|Correo: rafaelrodriguezcalvente@gmail.com  |
+|Web: rafacalventeweb.com                   |
+---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------
+|ORM ELOQUENT|
+--------------
+
+    Usa POO para manipular una BD. Esto facilita la labor en comparación a hacerlo
+    con SQL. Eloquent genera un modelo en el proyecto (un archivo que contiene una clase), debiéndose poner
+    El nombre con la letra 1ª mayúscula y en singular de la tabla de la BD. Normalmente se crea un modelo por
+    cada tabla.
+
+    Crear modelo:
+        - php artisan make:model Articulo
+
+    Esto genera el archivo en la carpeta app donde tendremos la clase Articulo que extiende
+    de la clase Model (vendor/laravel/framework/src/Illuminate/Database/Eloquent). Dentro
+    de este archivo hacemos el enlace con la tabla de la BD así:
+        protected $table = 'artículos';
+
+    Si no tuvieramos en nuestra tabla un campo id con clave primaria, también debemos indicarlo así:
+        protected $primaryKey = "id";
+
+    Cuando vayamos a realizar algo con el método create, debemos indicar en el modelo
+    Articulo en que atributos vamos a trabajar así:
+
+    protected $fillable=[
+            'Nombre_Articulo',
+            'Precio',
+            'pais_origen',
+            'observaciones',
+            'seccion'
+        ];
+
+
+    ORM (sistema de mapeo relacional de objetos) ELOQUENT:
+
+    Nos permite abstraernos de BD, creando entidades. A través de POO trabajaremos con DDBB.
+    El ORM se encargará de hacer las ops. con las DDBB. Este ORM es uno de los
+    más sencillos y rápidos de usar, mucho más que Doctrime el cual es el ORM
+    que trae Symphony.
+    Cada entidad en Laravel representa un registro de nuestra DB. Es decir, tendremos
+    una clase, y cada objeto que instanciemos representará un registro de la BD.
+    Los modelos se crean dentro de la carpeta app, ya tenemos uno por defecto que es User.php
+    La clase User representa la tabla User de la BD.
+    Los modelos SIEMPRE se guardan en singular, porque representan a una tabla.
+
+    Crear modelo:
+        - php artisan make:model Image
+        - php artisan make:model Comment
+        - php artisan make:model Like
+
+
+    Con un ORM todo el trabajo que tendríamos que hacer con consultas SQL o con un query builder
+    nos lo convierte a un mapeo de objetos. De manera que podemos tener objetos encadenados
+    uno detrás de otros y así podremos acceder a las propiedades de todos esos objetos
+    encadenados, es decir, a todos los datos de la base de datos.
+
+
+    Si hubiera algo que no se pueda hacer con el ORM entonces pasaríamos a hacerlo con el
+    query builder, y si no se pudiera con el query builder, entonces lo haríamos con las
+    consultas SQL.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------
+|REGISTRO Y LOGIN|
+------------------
+
+    Laravel trae una serie de métodos ya implementados para realizar estas características
+    de nuestra web. Esto se hace ejecutando un comando:
+
+    1º: debemos instalar el Laravel UI:
+        - composer require laravel/ui
+
+
+    2º: Instalamos otras dependencias
+        - php artisan ui vue --auth
+
+
+
+    3º: Ahora podremos ver:
+        - en views los layouts generados
+        - en routes/web.php nuevas rutas
+
+            *Auth::routes();
+            *Route::get('/home', 'HomeController@index')->name('home');
+
+        - en Controllers el HomeController.php
+        - si entramos en la página principal de laravel /public veremos en la interfaz dos botones de
+        login y register
+
+
+
+    4: Hacemos las últimas configuraciones:
+        - npm install && npm run dev
+
+
+    Dentro de la carpeta resources/lang/en podremos encontrar los textos que aparecen
+    en los registros/autenticacion los cuales se pueden modificar
+
+
+    Para añadir más campos en el formulario de register que los que vienen por defecto,
+    tenemos que añadir sus campos en User.php:
+
+        protected $fillable = [
+            'role', 'name', 'surname', 'nick', 'email', 'password',
+        ];
+
+    en: RegisterController (validator y create)
+    y en: register.blade.php
+
+    En app.blade.php y en config/app.php aparece el nombre "Laravel" como título, esto lo cambiamos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------
+|SUBIDA FICHEROS|
+-----------------
+
+En Laravel para guardar archivos tenemos que usar una especie de discos virtuales para tener mucho más protegidos
+esos archivos que se suben. Trabajaremos con la carpeta storage.
+
+1º: Entramos en config/filesystems.php donde se nos permitirá configurar esos discos virtuales, nos vamos
+En storage/app/public es donde se guardarían esos discos virtuales, pero nosotros vamos a crear uno nuevo, por lo tanto
+en storage/app creamos un folder 'users' y ahora en fylesystems copiamos otro 'public' del array disks con las características
+que ya se han modificado en dicho archivo
+
+En public/css se crearían los stilos que queramos darle a nuestra web
+y lo linkeamos en el style.css de layouts/css
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*Los alias dentro de config/app.php son para poder acceder a las clases
+con \Storage en lugar de tener que cargar el use \Illuminate...etc arriba de
+la página

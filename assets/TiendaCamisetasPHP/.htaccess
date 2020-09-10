@@ -1,0 +1,16 @@
+#Esto es una configuración de Apache, del módulo mod_rewrite en concreto
+
+<ifModule mod_rewrite.c>
+# Activar rewrite
+
+# Redirigir página de Error 404
+RewriteEngine on
+ErrorDocument 404 localhost/curso2/proyectoTienda/error
+
+# Asegura que no podamos cargar un directorio/archivo cualquiera en nuestra url
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# Reescribir toda url que tenga el formato index.php?controller=$1&action=$2 al formato RewriteRule ^(.*)/(.*)
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+</ifModule>
